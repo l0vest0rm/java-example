@@ -25,7 +25,7 @@ import java.sql.Connection;
 
 public class Testcase {
   @Test
-  void testConnectionPool() throws Exception {
+  public void testConnectionPool() throws Exception {
     HikariConfig config = new HikariConfig();
     config.setJdbcUrl("jdbc:mysql://localhost:3306/simpsons");
     config.setUsername("bart");
