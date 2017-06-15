@@ -25,7 +25,7 @@ import java.sql.Connection;
 
 public class Testcase {
   @Test
-  void testConnectionPool() throws Exception {
+  public void testConnectionPool() throws Exception {
     HikariConfig config = new HikariConfig();
     config.setJdbcUrl("jdbc:mysql://localhost:3306/simpsons");
     config.setUsername("bart");
@@ -35,7 +35,7 @@ public class Testcase {
     config.addDataSourceProperty("prepStmtCacheSqlLimit", "2048");
 
     HikariDataSource ds = new HikariDataSource(config);
-    try (Connection connection = ds.getConnection()) {
+    try (Connection conn = ds.getConnection()) {
       // use the connection
     }
 
