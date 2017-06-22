@@ -18,9 +18,10 @@
 
 package example;
 
-import org.junit.Test;
 import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;
+import org.junit.Test;
+
 import java.sql.Connection;
 
 public class Testcase {
@@ -38,6 +39,5 @@ public class Testcase {
     try (Connection conn = ds.getConnection()) {
       // use the connection
     }
-
   }
 }
