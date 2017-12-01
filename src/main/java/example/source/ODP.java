@@ -18,7 +18,6 @@
 
 package example.source;
 
-import example.join.WindowJoin;
 import example.utils.ThrottledIterator;
 import org.apache.flink.api.common.typeinfo.TypeHint;
 import org.apache.flink.api.common.typeinfo.TypeInformation;
