@@ -15,7 +15,8 @@
         <jar.dir>target</jar.dir>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <java.version>1.8</java.version>
-        <flink.version>1.2.1</flink.version>
+        <flink.version>1.4.2</flink.version>
+        <spark.version>2.3.0</spark.version>
         <slf4j.version>1.7.7</slf4j.version>
         <log4j.version>1.2.17</log4j.version>
         <scala.version>2.11</scala.version>
@@ -42,6 +43,11 @@
             <groupId>org.apache.flink</groupId>
             <artifactId>flink-connector-kafka-0.10_${scala.version}</artifactId>
             <version>${flink.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.spark</groupId>
+            <artifactId>spark-core_${scala.version}</artifactId>
+            <version>${spark.version}</version>
         </dependency>
         <dependency>
             <groupId>org.apache.commons</groupId>
