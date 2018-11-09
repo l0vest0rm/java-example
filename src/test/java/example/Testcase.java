@@ -18,26 +18,25 @@
 
 package example;
 
-import com.zaxxer.hikari.HikariConfig;
-import com.zaxxer.hikari.HikariDataSource;
+import example.mapper.BlogMapper;
+import org.apache.ibatis.io.Resources;
+import org.apache.ibatis.session.*;
 import org.junit.Test;
+import example.bean.Blog;
 
+import java.io.InputStream;
 import java.sql.Connection;
 
 public class Testcase {
   @Test
-  public void testConnectionPool() throws Exception {
-    HikariConfig config = new HikariConfig();
-    config.setJdbcUrl("jdbc:mysql://localhost:3306/simpsons");
-    config.setUsername("bart");
-    config.setPassword("51mp50n");
-    config.addDataSourceProperty("cachePrepStmts", "true");
-    config.addDataSourceProperty("prepStmtCacheSize", "250");
-    config.addDataSourceProperty("prepStmtCacheSqlLimit", "2048");
-
-    HikariDataSource ds = new HikariDataSource(config);
-    try (Connection conn = ds.getConnection()) {
-      // use the connection
-    }
+  public void testMybatis() throws Exception {
+    String resource = "mybatis-config.xml";
+    InputStream inputStream = Resources.getResourceAsStream(resource);
+    SqlSessionFactory sqlSessionFactory =
+            new SqlSessionFactoryBuilder().build(inputStream);
+    SqlSession session = sqlSessionFactory.openSession();
+    BlogMapper mapper = session.getMapper(BlogMapper.class);
+    Blog blog = mapper.selectBlog(5);
+    System.out.println(blog.toString());
   }
 }
