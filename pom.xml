@@ -15,14 +15,13 @@
         <jar.dir>target</jar.dir>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <java.version>1.8</java.version>
+        <scala.version>2.11</scala.version>
         <flink.version>1.6.2</flink.version>
         <spark.version>2.4.0</spark.version>
         <slf4j.version>1.7.7</slf4j.version>
         <log4j.version>1.2.17</log4j.version>
         <junit.version>4.12</junit.version>
-        <junit.jupiter.version>5.0.0-M4</junit.jupiter.version>
-        <junit.vintage.version>${junit.version}.0-M4</junit.vintage.version>
-        <junit.platform.version>1.0.0-M4</junit.platform.version>
+        <junit.jupiter.version>5.3.1</junit.jupiter.version>
         <PermGen>64m</PermGen>
         <MaxPermGen>512m</MaxPermGen>
     </properties>
@@ -40,22 +39,22 @@
         </dependency>
         <dependency>
             <groupId>org.apache.flink</groupId>
-            <artifactId>flink-streaming-java_2.11</artifactId>
+            <artifactId>flink-streaming-java_${scala.version}</artifactId>
             <version>${flink.version}</version>
         </dependency>
         <dependency>
             <groupId>org.apache.flink</groupId>
-            <artifactId>flink-connector-kafka-0.11_2.11</artifactId>
+            <artifactId>flink-connector-kafka-0.11_${scala.version}</artifactId>
             <version>${flink.version}</version>
         </dependency>
         <dependency>
             <groupId>org.apache.spark</groupId>
-            <artifactId>spark-core_2.12</artifactId>
+            <artifactId>spark-core_${scala.version}</artifactId>
             <version>${spark.version}</version>
         </dependency>
         <dependency>
             <groupId>org.apache.spark</groupId>
-            <artifactId>spark-sql_2.12</artifactId>
+            <artifactId>spark-sql_${scala.version}</artifactId>
             <version>${spark.version}</version>
         </dependency>
         <dependency>

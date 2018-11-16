@@ -39,4 +39,23 @@ public class Testcase {
     Blog blog = mapper.selectBlog(5);
     System.out.println(blog.toString());
   }
+
+  @Test
+  public void testSubClass() throws Exception {
+    class A {
+      void print(){
+        System.out.println("A");
+      }
+    }
+
+    class B  extends A{
+      @Override
+      void print(){
+        System.out.println("B");
+      }
+    }
+
+    A a = new B();
+      a.print();
+  }
 }
